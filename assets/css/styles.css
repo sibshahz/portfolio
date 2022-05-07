@@ -1,0 +1,61 @@
+/**
+Importing fonts
+**/
+@font-face {
+    font-family: 'sticks';
+    src: url('../resources/fonts/sticknobills-webfont.woff2') format('woff2'),
+         url('../resources/fonts/sticknobills-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'pontano';
+    src: url('../resources/fonts/pontanosans-regular-webfont.woff2') format('woff2'),
+         url('../resources/fonts/pontanosans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/**
+Setting font types
+**/
+body{
+    font-family: 'pontano';
+    font-size: 16px;
+    line-height: 24px;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'sticks';
+}
+
+/**
+Setting font sizes
+**/
+
+h1{
+    font-size: 4.8rem;
+}
+h1.title{
+    
+font-size:15.407rem;
+}
+/*
+About Section Styles
+*/
+section{
+
+}
+section .section-about{
+    background-image: url('../resources/bgs/wickedbackground.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 60%;
+    height: 40%;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    right: 20%;
+}
