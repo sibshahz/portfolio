@@ -26,6 +26,7 @@ body{
     font-family: 'pontano';
     font-size: 16px;
     line-height: 24px;
+    overflow: hidden;
 }
 h1,h2,h3,h4,h5,h6{
     font-family: 'sticks';
@@ -39,8 +40,17 @@ h1{
     font-size: 4.8rem;
 }
 h1.title{
-    
-font-size:15.407rem;
+    text-align: center;
+    font-size:15.407rem;
+}
+h2.sub-title{
+    text-align: center;
+    font-size:10.407rem;
+}
+/*social icons*/
+div.social-icons{
+    text-align: center;
+    padding: 18px;
 }
 /*
 About Section Styles
@@ -58,4 +68,16 @@ section .section-about{
     top: 20%;
     left: 20%;
     right: 20%;
+}
+
+/*Cursor robots styles*/
+.robots{
+    position:absolute;
+    top:0;
+    left:0;
+}
+.robot{
+    position: absolute;
+    visibility: hidden;
+    z-index: 5;
 }
