@@ -27,6 +27,20 @@ body{
     font-size: 16px;
     line-height: 24px;
     overflow: hidden;
+    color: antiquewhite;
+    background: #134E5E;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+background: #1FA2FF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+background: #77A1D3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E684AE, #79CBCA, #77A1D3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E684AE, #79CBCA, #77A1D3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 h1,h2,h3,h4,h5,h6{
     font-family: 'sticks';
@@ -56,18 +70,20 @@ div.social-icons{
 About Section Styles
 */
 section{
-
+    
 }
 section .section-about{
-    background-image: url('../resources/bgs/wickedbackground.svg');
+    /* background-image: url('../resources/bgs/wickedbackground.svg'); */
+    background-color: rgba(255,255, 255, 0.6);
+    color: #999;
     background-size: 100%;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     width: 60%;
     height: 40%;
     position: absolute;
+    overflow: hidden;
     top: 20%;
     left: 20%;
-    right: 20%;
 }
 
 /*Cursor robots styles*/
