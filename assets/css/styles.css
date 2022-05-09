@@ -27,6 +27,7 @@ body{
     font-size: 16px;
     line-height: 24px;
     overflow: hidden;
+    overflow-y: scroll;
     color: antiquewhite;
     background: #134E5E;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
@@ -38,8 +39,8 @@ background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF); /* W3C, IE 10+
 
 
 background: #77A1D3;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #E684AE, #79CBCA, #77A1D3);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #E684AE, #79CBCA, #77A1D3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: -webkit-linear-gradient(to right, #4cb94d, #79CBCA, #77A1D3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4cb94d, #79CBCA, #77A1D3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 h1,h2,h3,h4,h5,h6{
@@ -59,12 +60,23 @@ h1.title{
 }
 h2.sub-title{
     text-align: center;
-    font-size:10.407rem;
+    font-size:7.407rem;
 }
 /*social icons*/
 div.social-icons{
     text-align: center;
     padding: 18px;
+}
+div.social-icons a{
+    color: inherit;
+    display: inline-block;
+    visibility: hidden;
+    
+}
+div.social-icons i{
+    font-size: 5rem;
+    margin: 8px;
+    text-decoration: none;
 }
 /*
 About Section Styles
@@ -96,4 +108,5 @@ section .section-about{
     position: absolute;
     visibility: hidden;
     z-index: 5;
+    font-size: 4rem;
 }
