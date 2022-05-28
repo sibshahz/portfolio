@@ -28,19 +28,19 @@ body{
     line-height: 24px;
     overflow: hidden;
     overflow-y: scroll;
-    color: antiquewhite;
-    background: #134E5E;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #000;
+    /* background: #134E5E;  /* fallback for old browsers */
+/* background: -webkit-linear-gradient(to right, #71B280, #134E5E);  Chrome 10-25, Safari 5.1-6 */
+/* background: linear-gradient(to right, #71B280, #134E5E); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-background: #1FA2FF;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* background: #1FA2FF;  fallback for old browsers */
+/* background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);  Chrome 10-25, Safari 5.1-6 */
+/* background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 
-background: #77A1D3;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #4cb94d, #79CBCA, #77A1D3);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #4cb94d, #79CBCA, #77A1D3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* background: #77A1D3;  fallback for old browsers */
+/* background: -webkit-linear-gradient(to right, #4cb94d, #79CBCA, #77A1D3);  Chrome 10-25, Safari 5.1-6 */
+/* background: linear-gradient(to right, #4cb94d, #79CBCA, #77A1D3); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ */
 
 }
 h1,h2,h3,h4,h5,h6{
@@ -56,11 +56,11 @@ h1{
 }
 h1.title{
     text-align: center;
-    font-size:15.407rem;
+    /* font-size:15.407rem; */
 }
 h2.sub-title{
     text-align: center;
-    font-size:7.407rem;
+    /* font-size:7.407rem; */
 }
 /*social icons*/
 div.social-icons{
@@ -74,7 +74,7 @@ div.social-icons a{
     
 }
 div.social-icons i{
-    font-size: 5rem;
+    font-size: 4rem;
     margin: 8px;
     text-decoration: none;
 }
@@ -109,4 +109,57 @@ section .section-about{
     visibility: hidden;
     z-index: 5;
     font-size: 4rem;
+}
+
+/* nav styling */
+svg .circle{
+    background: #D31027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #EA384D, #D31027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+rect{
+    display: block;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}
+.navigation .nav-item{
+    display: none;
+    visibility: hidden;
+}
+.navigation nav .nav-item i{
+    font-size: 5rem;
+    color: purple;
+}
+.navigation nav .nav-item i:hover{
+    cursor: pointer;
+    /* transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2); */
+}
+.menu-text-items{
+    font-size: 1.8rem;
+    width: 160px;
+    margin: 60px auto 0 auto;
+    overflow: hidden;
+    height: 80px;
+    position: relative;
+}
+.menu-text-item{
+    display: none;
+    width: 160px;
+    display: inline;
+    position: absolute;
+    float: left;
+    line-height: 80px;
+    left: -160px;
+    visibility: hidden;
+    overflow: hidden;
+    text-align: center;
 }
