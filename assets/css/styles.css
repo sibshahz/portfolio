@@ -47,6 +47,14 @@ header .information{
     margin-left: 12px;
     overflow: visible;
 }
+a{
+    text-decoration: none;
+    color: green;
+}
+a:visited,a:active{
+    color: green;
+}
+
 h1.title{
     text-align: left;
     margin-bottom: 6px;

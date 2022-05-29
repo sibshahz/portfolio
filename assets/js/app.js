@@ -8,8 +8,8 @@ const menuX=menuIcons[2];
 const menuCircle=menuIcons[3];
 const sections=document.querySelectorAll('.sections section');
 const fontColors=[
-  "#24c38b",
-  "#302b63",
+  "#3CA55C",
+  "#a00bcc",
   "#2948ff",
   "#f80759"
 ];
@@ -28,11 +28,14 @@ menuIcons.forEach(function(elem,index) {
   gsap.set(menuIcons[index],{color:fontColors[index]});
 });
 let clickedSection=undefined;
+let TL=gsap.timeline();
 function handleClick(item,ind){
   let index=parseInt(ind);
+  if (TL.isActive()) { return; }
+  
   if(clickedSection!==undefined){
-    let TL=gsap.timeline();
     
+
     TL.to(sections[parseInt(clickedSection)],{autoAlpha:0,display:"none",visibility:"hidden",duration:1});
     clickedSection=index;
     TL.to(sections[parseInt(clickedSection)],{autoAlpha:1,display:"block",visibility:"visible",duration:1});
@@ -41,13 +44,14 @@ function handleClick(item,ind){
     clickedSection=index;
     gsap.to(sections[index],{autoAlpha:1,display:"block",visibility:"visible",duration:1});
   }
-  gsap.to([".title",".sub-title",socialIcons,menuIcons[index]],{color:fontColors[index]});
+
+  gsap.to([".title",".sub-title",socialIcons,menuIcons[index],"a"],{color:fontColors[index]});
 }
 
 function enterScale(item,indexText){
   let TL=gsap.timeline();
   let index=parseInt(indexText);
-  gsap.to([".title",".sub-title",socialIcons],{color:fontColors[index],duration:1,ease:"power4"})
+  // gsap.to([".title",".sub-title",socialIcons],{color:fontColors[index],duration:1,ease:"power4"})
   TL.to(item,{scale:"1.2", duration:0.6, ease:"power4"});
   TL.to(menuTexts[index],{color:fontColors[index],autoAlpha:1,left:0+"px",ease:"power4", duration:0.6},"-=0.6");
   
