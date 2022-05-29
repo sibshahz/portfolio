@@ -29,18 +29,6 @@ body{
     overflow: hidden;
     overflow-y: scroll;
     color: #000;
-    /* background: #134E5E;  /* fallback for old browsers */
-/* background: -webkit-linear-gradient(to right, #71B280, #134E5E);  Chrome 10-25, Safari 5.1-6 */
-/* background: linear-gradient(to right, #71B280, #134E5E); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-/* background: #1FA2FF;  fallback for old browsers */
-/* background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);  Chrome 10-25, Safari 5.1-6 */
-/* background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-/* background: #77A1D3;  fallback for old browsers */
-/* background: -webkit-linear-gradient(to right, #4cb94d, #79CBCA, #77A1D3);  Chrome 10-25, Safari 5.1-6 */
-/* background: linear-gradient(to right, #4cb94d, #79CBCA, #77A1D3); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ */
 
 }
 h1,h2,h3,h4,h5,h6{
@@ -52,19 +40,48 @@ Setting font sizes
 **/
 
 h1{
-    font-size: 4.8rem;
+    font-size: 2.6rem;
+}
+header .information{
+    float: left;
+    margin-left: 12px;
+    overflow: visible;
 }
 h1.title{
-    text-align: center;
+    text-align: left;
+    margin-bottom: 6px;
+    visibility: hidden;
     /* font-size:15.407rem; */
 }
 h2.sub-title{
-    text-align: center;
+    text-align: left;
+    margin-top: 0;
+    visibility: hidden;
     /* font-size:7.407rem; */
 }
+.gradient-text-one {
+    /* Fallback: Set a background color. */
+    background-color: #02aab0;
+    
+    /* Create the gradient. */
+    background-image: linear-gradient(45deg, #02aab0, #00cdac); 
+    
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+  
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+  }
 /*social icons*/
 div.social-icons{
-    text-align: center;
+    text-align: right;
+    float: right;
+    margin-right: 12px;
     padding: 18px;
 }
 div.social-icons a{
@@ -78,6 +95,14 @@ div.social-icons i{
     margin: 8px;
     text-decoration: none;
 }
+div.social-icons i:hover{
+    transform: scale(1.2);
+    transition-duration: 1.2 ease;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
 /*
 About Section Styles
 */
@@ -85,11 +110,9 @@ section{
     
 }
 section .section-about{
-    /* background-image: url('../resources/bgs/wickedbackground.svg'); */
     background-color: rgba(255,255, 255, 0.6);
     color: #999;
     background-size: 100%;
-    /* background-repeat: no-repeat; */
     width: 60%;
     height: 40%;
     position: absolute;
@@ -121,32 +144,34 @@ background: linear-gradient(to right, #EA384D, #D31027); /* W3C, IE 10+/ Edge, F
 rect{
     display: block;
 }
+div.navigation{
+    clear: both;
+    float: none;
+    margin-top: 200px;
+}
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 100px;
+    clear: both;
+    padding: 12% 0 0 0;
 }
 .navigation .nav-item{
     display: none;
     visibility: hidden;
 }
 .navigation nav .nav-item i{
-    font-size: 5rem;
-    color: purple;
+    font-size: 4rem;
+    color: inherit;
 }
 .navigation nav .nav-item i:hover{
     cursor: pointer;
-    /* transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    -o-transform: scale(1.2); */
 }
 .menu-text-items{
     font-size: 1.8rem;
     width: 160px;
-    margin: 60px auto 0 auto;
+    margin: 12px auto 0 auto;
     overflow: hidden;
     height: 80px;
     position: relative;
@@ -162,4 +187,30 @@ nav {
     visibility: hidden;
     overflow: hidden;
     text-align: center;
+}
+div.sections{
+
+}
+section{
+    visibility: hidden;
+    font-size: 1.6rem;
+    padding: 2.2rem;
+    line-height: 2.6rem;
+    display: none;
+    visibility: hidden;
+    color: white;
+    width: 60%;
+    margin: 20px auto 20px auto;
+    border-color: black;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    text-align: justify;
+    background: rgba(255,255, 255, 0.6);
+    color: black;
+    box-shadow: 1px -1px 12px -4px rgba(196,196,196,1);
+    -webkit-box-shadow: 1px -1px 12px -4px rgba(196,196,196,1);
+    -moz-box-shadow: 1px -1px 12px -4px rgba(196,196,196,1);
 }
