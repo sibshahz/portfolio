@@ -51,7 +51,6 @@ function handleClick(item,ind){
 function enterScale(item,indexText){
   let TL=gsap.timeline();
   let index=parseInt(indexText);
-  // gsap.to([".title",".sub-title",socialIcons],{color:fontColors[index],duration:1,ease:"power4"})
   TL.to(item,{scale:"1.2", duration:0.6, ease:"power4"});
   TL.to(menuTexts[index],{color:fontColors[index],autoAlpha:1,left:0+"px",ease:"power4", duration:0.6},"-=0.6");
   
