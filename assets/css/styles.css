@@ -30,6 +30,7 @@ body{
     overflow-y: scroll;
     color: #000;
     padding-bottom: 60px;
+    max-height: 1000px;
 }
 h1,h2,h3,h4,h5,h6{
     font-family: 'sticks';
@@ -65,6 +66,7 @@ h2.sub-title{
     text-align: left;
     margin-top: 0;
     visibility: hidden;
+    font-size: 1.2rem;
     /* font-size:7.407rem; */
 }
 .gradient-text-one {
@@ -128,6 +130,25 @@ section .section-about{
     top: 20%;
     left: 20%;
 }
+.section-about .pic-container{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    z-index: -5;
+    opacity: 0.5;
+    border: 8px solid white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    /* visibility: hidden; */
+}
+.pic-container img{
+    margin-top: -30%;
+    margin-left: -60%;
+}
 
 /*Cursor robots styles*/
 .robots{
@@ -177,7 +198,7 @@ nav {
     cursor: pointer;
 }
 .menu-text-items{
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     width: 160px;
     margin: 12px auto 0 auto;
     overflow: hidden;
@@ -190,7 +211,7 @@ nav {
     display: inline;
     position: absolute;
     float: left;
-    line-height: 80px;
+    line-height: 60px;
     left: -160px;
     visibility: hidden;
     overflow: hidden;
@@ -201,13 +222,13 @@ div.sections{
 }
 section{
     visibility: hidden;
-    font-size: 1.2rem;
-    padding: 1.8rem;
-    line-height: 1.8rem;
+    font-size: 1rem;
+    padding: 1.6rem;
+    line-height: 1.6rem;
     display: none;
     visibility: hidden;
     color: white;
-    width: 60%;
+    width: 65%;
     margin: 20px auto 20px auto;
     border-color: black;
     border-radius: 1rem;

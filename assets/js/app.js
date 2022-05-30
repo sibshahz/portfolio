@@ -6,7 +6,12 @@ const menuSquare=menuIcons[0];
 const menuTriangle=menuIcons[1];
 const menuX=menuIcons[2];
 const menuCircle=menuIcons[3];
+const profilePic=document.querySelector('.pic-container');
 const sections=document.querySelectorAll('.sections section');
+const windowWidth=window.outerWidth;
+const windowHeight=window.outerHeight;
+const element=[profilePic];
+
 const fontColors=[
   "#3CA55C",
   "#a00bcc",
@@ -23,29 +28,60 @@ menuIcons.forEach(function(elem,index) {
     leaveScale(menuIcons[index],index);
   });
   elem.addEventListener("click",function(){
-    handleClick(menuIcons[index],index);
+    handleClick(index);
   });
   gsap.set(menuIcons[index],{color:fontColors[index]});
 });
+
 let clickedSection=undefined;
 let TL=gsap.timeline();
-function handleClick(item,ind){
-  let index=parseInt(ind);
+function handleClick(ind){
   if (TL.isActive()) { return; }
-  
+  let index=parseInt(ind);
   if(clickedSection!==undefined){
-    
+    if(clickedSection===index){
+      gsap.to(sections[parseInt(clickedSection)],{
+        keyframes: [
+          { duration: 0.1, x: -4 },
+          { duration: 0.1, x: 4 },
+          { duration: 0.1, x: -4 },
+          { duration: 0.1, x: 0 },
+        ]
+      });
+      return;
+    }
+    clickedSection > index ? scrollLeft(sections[clickedSection],index):scrollRight(sections[clickedSection],index) ;
 
-    TL.to(sections[parseInt(clickedSection)],{autoAlpha:0,display:"none",visibility:"hidden",duration:1});
-    clickedSection=index;
-    TL.to(sections[parseInt(clickedSection)],{autoAlpha:1,display:"block",visibility:"visible",duration:1});
-    
+  
   }else{
     clickedSection=index;
-    gsap.to(sections[index],{autoAlpha:1,display:"block",visibility:"visible",duration:1});
+    firstPull(sections[index]);
+    
+
   }
 
   gsap.to([".title",".sub-title",socialIcons,menuIcons[index],"a"],{color:fontColors[index]});
+
+}
+
+
+function scrollLeft(section,index){
+  if (TL.isActive()) { return; }
+  TL.to(sections[clickedSection],{x:-(windowWidth/2),autoAlpha:0,display:"none",visibility:"hidden",duration:1.2,ease: "elastic.out(1, 0.68)"});
+  TL.fromTo(sections[index],{x:(windowWidth/2),autoAlpha:0,display:"none",visibility:"hidden"},{x:0,autoAlpha:1,display:"block",visibility:"visible",duration:1,ease: "elastic.out(1, 0.68)"});
+  clickedSection=parseInt(index);
+}
+function scrollRight(section,index){
+  if (TL.isActive()) { return; }
+  TL.to(sections[clickedSection],{x:(windowWidth/2),autoAlpha:0,display:"none",visibility:"hidden",duration:1.2,ease: "elastic.out(1, 0.68)"});
+  
+  TL.fromTo(sections[index],{x:-(windowWidth/2),autoAlpha:0,display:"none",visibility:"hidden"},{x:0,autoAlpha:1,display:"block",visibility:"visible",duration:1,ease: "elastic.out(1, 0.68)"});
+  clickedSection=parseInt(index);
+}
+
+function firstPull(section){
+  gsap.fromTo(section,{y:500,autoAlpha:0,display:"none"},{y:0,autoAlpha:1,display:"block",duration:1,ease: "elastic.out(1, 0.62)"});
+  moveElements(1);
 }
 
 function enterScale(item,indexText){
@@ -81,9 +117,19 @@ window.addEventListener("load",() => {
     TL.from('.title',{autoAlpha:0,y:-160+'%',duration:1.6,ease:"power4"},'+=1');
     TL.from('.sub-title',{autoAlpha:0,y:160+'%',duration:1.6,ease:"power4"},"-=2");
 });
-// window.addEventListener("mousemove", function(event) {
-//     moveRobots(event.pageX,event.pageY);
-// });
+function moveElements(index){
+    let tl_robots=gsap.timeline();
+    tl_robots.timeScale( Math.random() * 0.8);
+    tl_robots.to(profilePic, 
+      {
+        x:"random(-120%, 120%, 50)",
+        y:"random(-120%, 120%, 50)",
+        duration:  "random(2, 5, 1)",
+        repeat:-1,
+        repeatRefresh:true
+      });
+}
+
 
   function rotateIcons(){
     let TL=gsap.timeline();
@@ -91,8 +137,10 @@ window.addEventListener("load",() => {
     .fromTo(socialIcons,{rotation:"180"},{rotation:"0",duration:1.8,ease: "elastic.out(1, 0.3)",stagger:0.6},'-=2');
   }
 
-  function moveRobots(x,y){
-    gsap.to(robot, {x: x+"px",y:y+"px",ease:"power4.out",delay:0.4})
-
-  }
+  // function moveRobots(x,y){
+  //   // gsap.to(robot, {x: x+"px",y:y+"px",ease:"power4.out",delay:0.4});
+  //   let tl_robots=gsap.timeline();
+  //   tl_robots.timeScale(0.1);
+  //   tl_robots.to(profilePic, {marginTop: y+"px",marginLeft:x+"px"});
+  // }
 
