@@ -19,21 +19,50 @@ Importing fonts
 
 }
 
+@font-face {
+    font-family: 'rubiklight_italic';
+    src: url('../resources/fonts/rubik-italic-variablefont_wght-webfont.woff2') format('woff2-variations'),
+         url('../resources/fonts/rubik-italic-variablefont_wght-webfont.woff') format('woff-variations');
+    font-weight: 100 1000;
+	font-stretch: 25% 151%;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'rubiklight';
+    src: url('../resources/fonts/rubik-variablefont_wght-webfont.woff2') format('woff2-variations'),
+         url('../resources/fonts/rubik-variablefont_wght-webfont.woff') format('woff-variations');
+         font-weight: 100 1000;
+         font-stretch: 25% 151%;
+
+}
+
 /**
 Setting font types
 **/
 body{
-    font-family: 'pontano';
+    font-family: 'rubiklight';
     font-size: 16px;
     line-height: 24px;
     overflow: hidden;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     color: #000;
     padding-bottom: 60px;
     max-height: 1000px;
 }
+.container{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
 h1,h2,h3,h4,h5,h6{
-    font-family: 'sticks';
+    font-family: 'rubiklight';
+    font-weight: 1000;
 }
 
 /**
@@ -60,13 +89,13 @@ h1.title{
     text-align: left;
     margin-bottom: 6px;
     visibility: hidden;
-    /* font-size:15.407rem; */
+    font-size:1.5rem;
 }
 h2.sub-title{
     text-align: left;
     margin-top: 0;
     visibility: hidden;
-    font-size: 1.2rem;
+    font-size: 1rem;
     /* font-size:7.407rem; */
 }
 .gradient-text-one {
@@ -101,7 +130,7 @@ div.social-icons a{
     
 }
 div.social-icons i{
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin: 8px;
     text-decoration: none;
 }
@@ -126,7 +155,6 @@ section .section-about{
     width: 60%;
     height: 40%;
     position: absolute;
-    overflow: hidden;
     top: 20%;
     left: 20%;
 }
@@ -136,7 +164,7 @@ section .section-about{
     height: 130px;
     overflow: hidden;
     z-index: -5;
-    opacity: 0.5;
+    opacity: 0.3;
     border: 8px solid white;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -176,13 +204,13 @@ rect{
 div.navigation{
     clear: both;
     float: none;
-    margin-top: 200px;
+    /* margin-top: 200px; */
 }
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 100px;
+    /* margin-top: 100px; */
     clear: both;
     padding: 12% 0 0 0;
 }
@@ -191,7 +219,7 @@ nav {
     visibility: hidden;
 }
 .navigation nav .nav-item i{
-    font-size: 2.6rem;
+    font-size: 2rem;
     color: inherit;
 }
 .navigation nav .nav-item i:hover{
@@ -211,7 +239,7 @@ nav {
     display: inline;
     position: absolute;
     float: left;
-    line-height: 60px;
+    line-height: 80px;
     left: -160px;
     visibility: hidden;
     overflow: hidden;
@@ -229,17 +257,73 @@ section{
     visibility: hidden;
     color: white;
     width: 65%;
-    margin: 20px auto 20px auto;
-    border-color: black;
-    border-radius: 1rem;
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    -ms-border-radius: 1rem;
-    -o-border-radius: 1rem;
+    margin: 0 auto 20px auto;
+    /* border:1px solid #708090; */
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
     text-align: justify;
-    background: rgba(255,255, 255, 0.6);
+    background: rgba(255,255, 255, 0.88);
     color: black;
     box-shadow: 1px -1px 12px -4px rgba(196,196,196,1);
     -webkit-box-shadow: 1px -1px 12px -4px rgba(196,196,196,1);
     -moz-box-shadow: 1px -1px 12px -4px rgba(196,196,196,1);
+}
+
+.elements img{
+    position: absolute;
+    z-index: -5;
+    width: 100px;
+    height: 100px;
+    opacity: 0.3;
+    visibility: hidden;
+}
+
+.elements{
+    position:absolute;
+    z-index: -5;
+    border: 4px solid black;
+    background-color: lightblue;
+    visibility: visible;
+    bottom:-120%;
+}
+.square{
+    width: 500px;
+    height: 500px;
+    border: none;
+    left:-100%;
+    background: #348F50;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3CA55C, #1c823a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3CA55C, #1c823a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.rectangle{
+    width: 200px;
+    height: 600px;
+    border: none;
+    right:-100%;
+    background: #348F50;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3CA55C, #1c823a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3CA55C, #1c823a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+/*slider nav*/
+.arrows{
+    position: absolute;
+    font-size: 1.6rem;
+    color: inherit;
+    top: 48%;
+
+}
+.arrows.left{
+    left:18px;
+    display: none;
+    visibility: hidden;
+}
+.arrows.right{
+    right: 18px;
+    display: none;
+    visibility: hidden;
 }
