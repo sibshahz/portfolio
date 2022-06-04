@@ -24,11 +24,35 @@
 
 </head>
 <body>
-    <header class="header">
-        <div class="information">
-                <h1 class="title">Shahid Gillani</h1>
-                 <h2 class="sub-title">Front End Developer :)</h2>
+    <div id="drawer">
+        <div class="draw-button">
+            <a href="#"><i class="bi bi-list"></i></a>
         </div>
+        <div class="information">
+            <div class="pic-container">
+                <img src="assets/resources/imgs/profilePic.jpg" alt="Shahid Gillani | Front End Developer" class="profilePic">
+            </div>
+            <h1 class="title">Shahid Gillani</h1>
+            <h2 class="sub-title">Front End Developer</h2>
+        </div>
+        <div class="menu">
+            <div class="link">
+                <a href="#">ABOUT</a>
+            </div>
+            <div class="link">
+                <a href="#">SKILLS</a>
+            </div>
+            <div class="link">
+                <a href="#">PORTFOLIO</a>
+            </div>
+            <div class="link">
+                <a href="#">CONTACT</a>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <header class="header">
+        
             <div class="social-icons">
                 <a href="https://www.github.com/sibshahz"  target="_blank"><i class="bi bi-github"></i></a>
                 <a href="https://www.instagram.com/shahidgillani_"  target="_blank"><i class="bi bi-instagram"></i></a>
@@ -38,32 +62,13 @@
                 
             </div>
     </header>
-
+    
     <div class="arrows left">
-        <a href="#"><i class="bi bi-arrow-bar-left"></i></a>
+        <a href="#"><i class="bi bi-arrow-left-square-fill"></i></a>
     </div>
     <div class="arrows right">
-        <a href="#"><i class="bi bi-arrow-bar-right"></i></a>
+        <a href="#"><i class="bi bi-arrow-right-square-fill"></i></i></a>
     </div>
-
-    <div class="robots">
-        <i class="robot bi bi-robot"></i>
-        <img class="robot" src="assets/resources/icons/robot.svg" alt="Cursor Robots" width="66" height="66" />
-    </div>
-
-        <div class="elements square">
-
-        </div>
-        <div class="elements rectangle">
-
-        </div>
-        <div class="elements circle" >
-
-        </div>
-
-        <div class="elements oval">
-
-        </div>
 
         <div class="navigation">
         <nav>
@@ -98,9 +103,6 @@
     </div>
     <div class="sections">
         <section class="section-about">
-            <!-- <div class="pic-container">
-                <img src="assets/resources/imgs/profilePic.jpg" alt="Shahid Gillani | Front End Developer" class="profilePic">
-            </div> -->
                 <p>
                     Hi, I am <b>Shahid Gillani</b>. Computer Science graduate and a <b> front end developer</b> from <a href="https://www.nationalgeographic.com/travel/article/beautiful-natural-wonders" target="_blank">Pakistan</a>. I love to play <a href="https://steamcommunity.com/id/ShahzPlays/" target="_blank">video games</a>, watch <a href="https://www.imdb.com/list/ls066259178/" target="_blank"> movies </a> and <a href="https://www.imdb.com/title/tt9335498/" target="_blank">anime</a>.
                      I love to bring ideas to crisp realities, always learning new technologies
@@ -111,7 +113,7 @@
                     or just to say HI.... :)
                 </p>
         </section>
-        <section class="section-skills">
+        <!-- <section class="section-skills">
                 <p>With years of <b>experience</b> in front end web development, I can learn and adapt to ever changing 
                     <b>technologies</b> and techniques. Few of them are:
                     <ul>
@@ -123,6 +125,58 @@
                         <li>Git</li>
                     </ul>
                 </p>
+        </section> -->
+        <section class="section-skills">
+            <div class="skills-container">
+                <div class="skill">
+                    <span class="skill-icon">
+                        <img class="icon" src="assets/resources/icons/react-brands.svg" alt="React Icon" width="32" height="32" />
+                    </span>
+                    <span class="skill-content">
+                        React
+                    </span>
+                </div>
+                <div class="skill">
+                    <span class="skill-icon">
+                        <img class="icon" src="assets/resources/icons/icons8-redux.svg" alt="Redux Icon" width="32" height="32" />
+                    </span>
+                    <span class="skill-content">
+                        Redux
+                    </span>
+                </div>
+                <div class="skill">
+                    <span class="skill-icon">
+                        <img class="icon" src="assets/resources/icons/javascript.svg" alt="Javscript Icon" width="32" height="32" />
+                    </span>
+                    <span class="skill-content">
+                        Javascript
+                    </span>
+                </div>
+                <div class="skill">
+                    <span class="skill-icon">
+                        <img class="icon" src="assets/resources/icons/css3-brands.svg" alt="CSS-3" width="32" height="32" />
+                    </span>
+                    <span class="skill-content">
+                        CSS-3
+                    </span>
+                </div>
+                <div class="skill">
+                    <span class="skill-icon">
+                        <img class="icon" src="assets/resources/icons/html5-brands.svg" alt="HTML-5 Icon" width="32" height="32" />
+                    </span>
+                    <span class="skill-content">
+                        HTML-5
+                    </span>
+                </div>
+                <div class="skill">
+                    <span class="skill-icon">
+                        <img class="icon" src="assets/resources/icons/github-square-brands.svg" alt="Git Icon" width="32" height="32" />
+                    </span>
+                    <span class="skill-content">
+                        GIT
+                    </span>
+                </div>
+            </div>
         </section>
         <section class="section-portfolio">
             <p>Feel free to go through my <b>Github</b> profile for the projects I have worked on, there is
@@ -145,6 +199,8 @@
             </ul>
         </section>
     </div>
+    </div>
+    
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>

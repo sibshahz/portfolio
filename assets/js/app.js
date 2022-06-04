@@ -12,6 +12,9 @@ const elements=document.querySelectorAll('.elements');
 const windowWidth=window.outerWidth;
 const windowHeight=window.outerHeight;
 const element=[profilePic];
+const drawerButton=document.querySelector('.draw-button');
+const drawer=document.querySelector('#drawer');
+const menuLinks=document.querySelectorAll('.link');
 
 const fontColors=[
   "#3CA55C",
@@ -22,7 +25,15 @@ const fontColors=[
 const arrowRight=document.querySelector('.right');
 const arrowLeft=document.querySelector('.left');
 
-
+drawerButton.addEventListener("click",()=>{
+  openDrawer();
+});
+//menu links event registration
+menuLinks.forEach(function(elem,index){
+  elem.addEventListener("click",function(){
+    handleClick(index);
+  });
+})
 //mouse click animations
 menuIcons.forEach(function(elem,index) {
   elem.addEventListener("mouseover", function() {
@@ -37,15 +48,34 @@ menuIcons.forEach(function(elem,index) {
   gsap.set(menuIcons[index],{color:fontColors[index]});
 });
 
+let isDrawerOpen=false;
+function openDrawer(){
+  // let drawTL=gsap.timeline();
+  if(isDrawerOpen){
+    gsap.to(drawer,{left:-164,duration:1,ease:"power4"});
+  
+  } else{
+    gsap.to(drawer,{left:0,duration:1,ease:"power4"});
+    gsap.from(profilePic,{y:"-120%",duration:1,ease:"elastic.out(1, 0.7)",delay:0.4});
+    gsap.from('.title',{autoAlpha:0,y:-160+'%',duration:1.6,ease:"power4"});
+    gsap.from('.sub-title',{autoAlpha:0,y:160+'%',duration:1.6,ease:"power4"},"-=1");
+    gsap.from(menuLinks,{x:"-100%",opacity:0.3,duration:0.6,ease:"power4",stagger:0.4});
+  } 
+               
+  isDrawerOpen=!isDrawerOpen;
+}
 let clickedSection=undefined;
 let TL=gsap.timeline();
 function handleClick(ind){
   if (TL.isActive()) { return; }
   loadArrows();
   let index=parseInt(ind);
-  
-  if(clickedSection!==undefined){
 
+  if(clickedSection!==undefined){
+    if(clickedSection===index){
+      negate(index);
+      return;
+    }  
     clickedSection > index ? 
     scrollLeft(sections[clickedSection],index):scrollRight(sections[clickedSection],index) ;
 
@@ -62,7 +92,7 @@ function handleClick(ind){
 }
 
 function negate(index){
-  if(clickedSection===index){
+
     gsap.to(sections[parseInt(clickedSection)],{
       keyframes: [
         { duration: 0.1, x: -4 },
@@ -72,14 +102,12 @@ function negate(index){
       ]
     });
     return;
-  }
 }
 
 function scrollLeft(section,index){
   if (TL.isActive()) { return; }
   TL.to(sections[clickedSection],
     {x:-(windowWidth/2),rotateY:-50,autoAlpha:0,display:"none",visibility:"hidden",duration:1.2,ease: "back.out(1.7)"});
-    loadElements(index);
   TL.fromTo(sections[index],
     {x:(windowWidth/2),rotateY:50,autoAlpha:1,display:"none",visibility:"hidden"},
     {x:0,rotateY:0,autoAlpha:1,display:"block",visibility:"visible",duration:1.2,ease: "back.out(1.7)"});
@@ -92,7 +120,6 @@ function scrollRight(section,index){
 
   TL.to(sections[clickedSection],
     {x:(windowWidth/2),rotateY:-50,autoAlpha:0,display:"none",visibility:"hidden",duration:1.2,ease: "back.out(1.7)"});
-  loadElements(index);
   TL.fromTo(sections[index],
     {x:-(windowWidth/2),rotateY:50,autoAlpha:1,display:"none",visibility:"hidden"},
     {rotateY:0,x:0,autoAlpha:1,display:"block",visibility:"visible",duration:1.2,ease: "back.out(1.7)"});
@@ -106,20 +133,6 @@ function firstPull(section,index){
     {y:0,autoAlpha:1,display:"block",duration:1,ease: "back.out(1.7)"});
   // moveElements(1);
 
-}
-function loadElements(ind){
-  let etl=gsap.timeline();
-  let index=parseInt(ind);
-  etl.to([elements[index],elements[index+1]],{bottom:"-80%",duration:1,repeat:1});
-  // etl.to(elements[index],
-  //   {left:"random(-200,-250,-10)",duration:5});
-  // etl.to(elements[index+1],
-  //   {right:"random(-45%,-65%,-2)",duration:5},"-=5");
-  
-  etl.to(elements[index],
-    {rotate:360,duration:10,ease:"power4",repeat:-1});
-  etl.to(elements[index+1],
-    {rotate:360,duration:10,ease:"power4",repeat:-1});
 }
 arrowRight.addEventListener("click",function(){
   if((clickedSection+1)==sections.length){
@@ -186,8 +199,7 @@ window.addEventListener("load",() => {
       {scale:1.2,display:"none",visibility:'hidden',x:200},
       {scale:1,display:"block",visibility:"visible",x:0,y:0,duration:2.5,ease:"power4"},'-=2.5');
     TL.to('nav',{paddingTop:2+'%',duration:1});
-    TL.from('.title',{autoAlpha:0,y:-160+'%',duration:1.6,ease:"power4"},'+=1');
-    TL.from('.sub-title',{autoAlpha:0,y:160+'%',duration:1.6,ease:"power4"},"-=2");
+
 });
 function moveElements(index){
     // let tl_robots=gsap.timeline();
