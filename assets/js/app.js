@@ -190,7 +190,6 @@ window.addEventListener("load",() => {
     let TL=gsap.timeline(
       {onComplete:rotateIcons}
     );
-    TL.set('.container',{height:windowHeight});
     TL.delay(1);
     TL.fromTo([menuSquare,menuTriangle],
       {scale:1.2,display:"none",visibility:'hidden',x:-200},
